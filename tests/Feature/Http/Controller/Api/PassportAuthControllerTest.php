@@ -49,5 +49,7 @@ class PassportAuthControllerTest extends TestCase
 
     // receive the token
     $this->assertArrayHasKey('token', $response->json());
+
+    User::where('email', $user['email'])->delete();
   }
 }
