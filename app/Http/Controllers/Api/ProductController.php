@@ -9,11 +9,18 @@ use Validator;
 
 class ProductController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
+   /**
+    * @OA\Get(
+    *     path="/api/products",
+    *     tags={"Product"},
+    *     summary="List of Products",
+    *     description="Return List of products",
+    *     @OA\Response(
+    *         response="200",
+    *         description="Successfull operation"
+    *      )
+    * )
+    */
   public function index()
   {
     $products = Product::all();
